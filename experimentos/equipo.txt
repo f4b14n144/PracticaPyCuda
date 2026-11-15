@@ -1,4 +1,4 @@
-Equipo y herramientas usados en crudo_python.csv y validacion.csv (crudo_p01.csv es de la practica 01, mismo equipo)
+Equipo y herramientas usados en crudo_python.csv, crudo_p01.csv y validacion.csv
 CPU: Intel(R) Core(TM) Ultra 9 275HX, 24 nucleos, 24 hilos logicos
 RAM: 31.4 GB visibles para el sistema
 Sistema: Windows-11-10.0.26300-SP0

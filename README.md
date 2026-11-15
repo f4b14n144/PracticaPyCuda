@@ -34,7 +34,7 @@ Práctica 02 de Computación Paralela. Continúa la [práctica 01](https://githu
 | `equipo.py` | Registra hardware y versiones en `experimentos/equipo.txt` |
 | `experimentos/graficar.py` | Resumen, aceleraciones y gráficas de las cuatro versiones |
 | `Imagenes/entrada/` | Las mismas entradas de la práctica 01, con `SHA256SUMS.txt` |
-| `experimentos/crudo_p01.csv` | Tiempos de C/C++ y CUDA C reutilizados de la práctica 01 |
+| `experimentos/crudo_p01.csv` | Tiempos de C/C++ y CUDA C, medidos con `benchmark.exe` de la práctica 01 |
 | `referencias/` | Salidas de C/C++ y CUDA C para la validación (no se versiona, ver abajo) |
 | `ejecutar_todo.ps1` | Ejecuta toda la secuencia |
 
@@ -42,7 +42,7 @@ Práctica 02 de Computación Paralela. Continúa la [práctica 01](https://githu
 
 El código C/C++ y CUDA C está en [PracticaCUDAvsCPU](https://github.com/Jellz01/PracticaCUDAvsCPU):
 
-- Commit `f82b51b409cb12cd69382ef3c182176dbdd12864`: versión de la práctica 01 con la que se midieron los tiempos de `crudo_p01.csv`.
+- Commit `f82b51b409cb12cd69382ef3c182176dbdd12864`: versión de la práctica 01 (código C/C++ y CUDA C sin cambios) cuyo `benchmark.exe` genera `crudo_p01.csv`.
 - Commit `1a721f59d8d0ee83d39a62f8551af53b46bc7c03`: agrega `codigo/exportar_salidas.cpp`, que guarda las salidas `float` de C/C++ y CUDA C en archivos `.f32` para compararlas desde Python. No modifica `filtros.cpp`, `filtros.cu` ni `filtros.h`.
 
 ## Entorno
@@ -72,8 +72,9 @@ Primero, en el repositorio de la práctica 01, con el entorno de Visual Studio c
 ```powershell
 cd codigo
 cmake -S . -B build-local -G "NMake Makefiles"
-cmake --build build-local --target exportar_salidas
+cmake --build build-local
 .\exportar_salidas.exe ..\Imagenes\entrada <ruta de este proyecto>\referencias
+.\benchmark.exe ..\Imagenes\entrada <ruta de este proyecto>\experimentos\crudo_p01.csv 10 2
 ```
 
 Luego, desde la raíz de este proyecto:
@@ -143,7 +144,7 @@ Desde Python el lanzamiento es `kernel.prepared_call((bloques, 1), (hilos, 1, 1)
 
 | Archivo | Contenido |
 |---|---|
-| `experimentos/crudo_p01.csv` | Registros de C/C++ y CUDA C (práctica 01, reutilizados) |
+| `experimentos/crudo_p01.csv` | Registros de C/C++ y CUDA C (código de la práctica 01, medidos de nuevo) |
 | `experimentos/crudo_python.csv` | Registros de Python secuencial y PyCUDA |
 | `experimentos/preparacion.csv` | Contexto y compilación de PyCUDA |
 | `experimentos/resumen.csv` | Mediana, cuartiles, IQR, desviación y CV por configuración |
@@ -152,7 +153,7 @@ Desde Python el lanzamiento es `kernel.prepared_call((bloques, 1), (hilos, 1, 1)
 | `experimentos/validacion.csv` | Errores de las cuatro versiones |
 | `experimentos/equipo.txt` | Hardware y versiones |
 
-Los tiempos de C/C++ y CUDA C se reutilizan de la práctica 01 (`crudo_p01.csv`, commit `f82b51b`): mismo equipo, mismas imágenes (SHA-256), mismo código y mismo alcance de medición (reservas fuera del tiempo conjunto, kernel con eventos CUDA). Los de Python secuencial y PyCUDA son nuevos.
+Todos los tiempos son nuevos. Los de C/C++ y CUDA C se volvieron a medir con `benchmark.exe` del commit `f82b51b`, sin cambios, porque el controlador NVIDIA cambió entre las dos prácticas (617.14 en la práctica 01, 621.14 ahora). De la práctica 01 solo se reutilizan el código C/C++ y CUDA C y las imágenes de entrada (verificadas con SHA-256).
 
 ## Datos de entrada
 
