@@ -1,0 +1,4 @@
+fecha,gpu,t_contexto_ms,t_compilacion_ms,cache_compilacion
+2026-11-12T15:32:54,NVIDIA GeForce RTX 5060 Laptop GPU,113.513,2068.217,no
+2026-11-12T16:17:39,NVIDIA GeForce RTX 5060 Laptop GPU,107.728,2440.497,no
+2026-11-12T17:20:27,NVIDIA GeForce RTX 5060 Laptop GPU,144.009,2651.267,no

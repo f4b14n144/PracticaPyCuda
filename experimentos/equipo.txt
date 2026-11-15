@@ -1,0 +1,13 @@
+Equipo y herramientas usados en crudo_python.csv, crudo_c.csv y validacion.csv
+CPU: Intel(R) Core(TM) Ultra 9 275HX, 24 nucleos, 24 hilos logicos
+RAM: 31.4 GB visibles para el sistema
+Sistema: Windows-11-10.0.26300-SP0
+Python 3.14.5, NumPy 2.5.4, Pillow 13.0.0
+PyCUDA 2026.1
+GPU: NVIDIA GeForce RTX 5060 Laptop GPU, 8123 MiB, capacidad (12, 0)
+API del controlador CUDA: 13.5
+Controlador NVIDIA: 621.14
+CUDA Toolkit: Cuda compilation tools, release 13.4, V13.4.92
+pandas 3.1.1
+matplotlib 3.11.2
+Alimentacion durante las mediciones:  corriente /
