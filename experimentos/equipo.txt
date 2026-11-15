@@ -1,4 +1,4 @@
-Equipo y herramientas usados en crudo_python.csv, crudo_c.csv y validacion.csv
+Equipo y herramientas usados en crudo_python.csv y validacion.csv (crudo_p01.csv es de la practica 01, mismo equipo)
 CPU: Intel(R) Core(TM) Ultra 9 275HX, 24 nucleos, 24 hilos logicos
 RAM: 31.4 GB visibles para el sistema
 Sistema: Windows-11-10.0.26300-SP0
@@ -10,4 +10,4 @@ Controlador NVIDIA: 621.14
 CUDA Toolkit: Cuda compilation tools, release 13.4, V13.4.92
 pandas 3.1.1
 matplotlib 3.11.2
-Alimentacion durante las mediciones:  corriente /
+Alimentacion durante las mediciones: corriente
